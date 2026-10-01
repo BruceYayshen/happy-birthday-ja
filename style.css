@@ -1,0 +1,845 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f5f2;
+    color: #292525;
+
+    font-family:
+        "Poppins",
+        "Noto Sans Thai",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================
+   OPENING SCREEN
+===================================== */
+
+.opening-screen {
+    position: fixed;
+    inset: 0;
+
+    background: #f8f5f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 9999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.opening-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    padding: 30px;
+}
+
+.small-title {
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+
+    margin-bottom: 20px;
+}
+
+.opening-content h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 12vw, 130px);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    margin-bottom: 25px;
+}
+
+.opening-subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 45px;
+}
+
+#enterButton {
+    display: inline-block;
+
+    background: transparent;
+
+    border: 1px solid #292525;
+
+    color: #292525;
+
+    padding: 13px 35px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#enterButton:hover {
+    background: #292525;
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.section-number {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: 0.45;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 10vw, 125px);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    margin-bottom: 40px;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    opacity: 0.75;
+}
+
+.scroll-indicator {
+    margin-top: 70px;
+
+    font-size: 25px;
+
+    opacity: 0.45;
+
+    animation: floatingArrow 2s ease-in-out infinite;
+}
+
+@keyframes floatingArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =====================================
+   TEXT SECTIONS
+===================================== */
+
+.text-section {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 150px 30px;
+}
+
+.text-section h2,
+.quote-section h2,
+.letter-section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 60px;
+}
+
+.english-text {
+    max-width: 700px;
+}
+
+.english-text p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   THAI
+===================================== */
+
+.thai-text {
+    max-width: 700px;
+
+    margin-top: 55px;
+
+    opacity: 0.8;
+}
+
+.thai-text p {
+    font-family:
+        "Noto Sans Thai",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 300;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   FULL WIDTH PHOTO
+===================================== */
+
+.full-photo {
+    width: 100%;
+
+    padding: 80px 5vw;
+
+    display: flex;
+
+    justify-content: center;
+
+    background: #f8f5f2;
+}
+
+.full-photo img {
+    width: 100%;
+
+    max-width: 1300px;
+
+    height: auto;
+
+    /*
+       DO NOT CROP THE PHOTO.
+       The entire image remains visible.
+    */
+
+    object-fit: contain;
+
+    object-position: center;
+
+    cursor: pointer;
+
+    transition: transform 0.5s ease;
+}
+
+.full-photo img:hover {
+    transform: scale(1.01);
+}
+
+
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery-section {
+    padding: 150px 5vw;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+.gallery-section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    max-width: 800px;
+
+    margin-bottom: 80px;
+}
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+.gallery-item {
+    width: 100%;
+
+    background: #eee9e5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    transition: transform 0.7s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =====================================
+   QUOTE
+===================================== */
+
+.quote-section {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 120px 30px;
+}
+
+
+/* =====================================
+   SPLIT SECTION
+===================================== */
+
+.split-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 750px;
+
+    margin-top: 80px;
+}
+
+.split-image {
+    background: #eee9e5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.split-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    cursor: pointer;
+}
+
+.split-text {
+    padding: 100px 8vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.split-text h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 50px;
+}
+
+
+/* =====================================
+   LETTER
+===================================== */
+
+.letter-section {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 180px 30px;
+}
+
+.letter {
+    max-width: 750px;
+}
+
+.signature {
+    margin-top: 50px;
+
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 30px !important;
+}
+
+
+/* =====================================
+   SURPRISE
+===================================== */
+
+.surprise-section {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 30px;
+}
+
+#surpriseButton {
+    display: inline-block;
+
+    border: 1px solid #292525;
+
+    background: transparent;
+
+    color: #292525;
+
+    padding: 18px 40px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#surpriseButton:hover {
+    background: #292525;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+#surpriseMessage {
+    margin-top: 60px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    pointer-events: none;
+}
+
+#surpriseMessage.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+#surpriseMessage h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+#surpriseMessage p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(41, 37, 37, 0.1);
+}
+
+footer p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    opacity: 0.65;
+}
+
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   LIGHTBOX
+===================================== */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(20, 18, 18, 0.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 10000;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: default;
+}
+
+#closeLightbox {
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    font-weight: 200;
+
+    z-index: 10001;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 90vh;
+
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 15vw, 90px);
+    }
+
+    .hero-subtitle {
+        font-size: 21px;
+    }
+
+    .text-section {
+        padding: 100px 25px;
+    }
+
+    .text-section h2,
+    .quote-section h2,
+    .letter-section h2 {
+        font-size: 50px;
+
+        margin-bottom: 45px;
+    }
+
+    .english-text p {
+        font-size: 21px;
+
+        line-height: 1.65;
+    }
+
+    .thai-text {
+        margin-top: 45px;
+    }
+
+    .thai-text p {
+        font-size: 15px;
+
+        line-height: 2;
+    }
+
+    .full-photo {
+        padding: 40px 15px;
+    }
+
+    .gallery-section {
+        padding: 100px 20px;
+    }
+
+    .gallery-section h2 {
+        font-size: 50px;
+
+        margin-bottom: 50px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .split-image {
+        min-height: 500px;
+    }
+
+    .split-text {
+        padding: 90px 25px;
+    }
+
+    .split-text h2 {
+        font-size: 55px;
+    }
+
+    .letter-section {
+        padding: 120px 25px;
+    }
+
+    .surprise-section {
+        min-height: 60vh;
+
+        padding: 80px 20px;
+    }
+
+    #surpriseMessage h2 {
+        font-size: 60px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL PHONES
+===================================== */
+
+@media (max-width: 480px) {
+
+    .opening-content h1 {
+        font-size: 70px;
+    }
+
+    .opening-subtitle {
+        font-size: 25px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .text-section h2,
+    .quote-section h2,
+    .letter-section h2 {
+        font-size: 45px;
+    }
+
+    .english-text p {
+        font-size: 19px;
+    }
+
+    .thai-text p {
+        font-size: 14px;
+    }
+
+    .split-text {
+        font-size: 400px;
+    }
+}
